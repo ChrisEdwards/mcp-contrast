@@ -48,9 +48,9 @@ jobs:
       - name: Build Release Artifact
         run: ./mvnw clean package -DskipTests
 
-      - name: Push Changes and Tags
+      - name: Push Changes and Tags (Test Mode)
         run: |
-          git push origin HEAD:main
+          git push origin HEAD:test-release
           git push origin v${{ inputs.releaseVersion }}
 
       - name: Create GitHub Release
