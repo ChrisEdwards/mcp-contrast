@@ -45,6 +45,9 @@ jobs:
             -DpushChanges=false \
             -B
 
+      - name: Checkout Release Tag
+        run: git checkout v${{ inputs.releaseVersion }}
+
       - name: Build Release Artifact
         run: ./mvnw clean package -DskipTests
 
